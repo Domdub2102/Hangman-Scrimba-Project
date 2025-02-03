@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #262626;
+  color: #D9D9D9;
+  padding: 20px;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  width: 400px;
+}
+
+header > h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+header > h2 {
+  font-size: 1.1rem;
+  font-weight: 200;
+  color: grey;
+}
+
+.status {
+  width: 400px;
+  height: 66px;
+  background-color: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.status.gamewon {
+  background-color: #30784a;
+}
+
+.status.gamelost {
+  background-color: #BA2A2A;
+}
+
+.status.farewell {
+  background-color: purple;
+}
+
+.status > h3 {
+  font-weight: 300;
+  margin: 2px;
+}
+
+.status > p {
+  margin: 2px;
+}
+
+.languages {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 30px;
+}
+
+.language {
+  padding: 4.5px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.language.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.word-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 36px;
+  font-size: 1.4rem;
+}
+
+.letterbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-bottom: 1px solid #D9D9D9;
+  background-color:#323232;
+  padding-top: 2px;
+}
+
+.letterbox > span {
+  opacity: 0;
+}
+
+.letterbox.letternotguessed {
+  opacity: 0.6;
+  color: red;
+}
+
+.letterbox.letterguessed {
+  color:#10A95B;
+}
+
+.letterbox.letterwon {
+  color: #10A95B;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 400px;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.keys {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 3px;
+  background-color: yellow;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #FCBA29;
+}
+
+.keys:disabled {
+  opacity: 0.9;
+  cursor: auto;
+}
+
+.keyright {
+  background-color: #10A95B;
+}
+
+.keywrong {
+  background-color: #EC5D49;
+}
+
+.newgame-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.newgame-button > button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: aquamarine;
+  cursor: pointer;
+  padding-top: 1px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
